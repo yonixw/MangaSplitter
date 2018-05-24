@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MangaSplitter.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ImagesPrefix" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Boku_no_Hero_Academia_</Value>
+    </Setting>
+    <Setting Name="MagickPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\Program Files\ImageMagick-7.0.2-Q16\magick.exe</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
