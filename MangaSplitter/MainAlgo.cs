@@ -329,7 +329,13 @@ namespace MangaSplitter
                 createPage(standardName(strZeros("0", 6), strZeros("1", 6)), drawText: "BLANK\nFOR\nDUPLEX" + DateTime.Now.ToLongDateString());
             }
 
-            createPage(standardName(strZeros("0",6), strZeros("0", 6)), drawText: "START OF MANGA\nDATE:" + DateTime.Now.ToLongDateString());
+            createPage(standardName(strZeros("0",6), strZeros("0", 6)), 
+                drawText: 
+                    "START OF MANGA\n" +
+                    "DATE: " + DateTime.Now.ToLongDateString() + "\n" +
+                    "Binding: " + ((conf.Booklet) ? "Booklet" : "Duplex") + "\n" +
+                    "Direction: " + ((conf.rtl) ? "Right to left" : "Left to right") + "\n"
+                );
             createPage(standardName("ZZZZZZ", "ZZZZZZ"), drawText: "END OF MANGA\nDATE:" + DateTime.Now.ToLongDateString());
         }
     }
