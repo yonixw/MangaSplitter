@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Imaging;
 using System.Diagnostics;
+using MangaSplitter.Tools;
 
 namespace MangaSplitter
 {
@@ -58,7 +59,7 @@ namespace MangaSplitter
             //    Folder(new DirectoryInfo(lblPath.Text));
             //}
 
-            Validate(new DirectoryInfo(lblPath.Text));
+            Prepare(new DirectoryInfo(lblPath.Text));
             Folder(new DirectoryInfo(lblPath.Text));
 
 
@@ -82,7 +83,11 @@ namespace MangaSplitter
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-
+            //using (ScriptEngine engine = new ScriptEngine(Tools.ScriptEngine.JavaScriptLanguage))
+            //{
+            //    ParsedScript parsed = engine.Parse("function MyFunc(x){return 1+2+x}");
+            //    MessageBox.Show(parsed.CallMethod("MyFunc", 3).ToString());
+            //}
         }
 
 
@@ -166,7 +171,7 @@ namespace MangaSplitter
         }
 
 
-        private bool Validate(DirectoryInfo di) 
+        private bool Prepare(DirectoryInfo di) 
         {
             int cutoff = (int)numericUpDown1.Value;
             bool Valid = true;
@@ -238,7 +243,7 @@ namespace MangaSplitter
             // Child Folders
             foreach (DirectoryInfo under in di.GetDirectories())
             {
-                Valid = Valid & Validate(under);
+                Valid = Valid & Prepare(under);
             }
 
             return Valid;
