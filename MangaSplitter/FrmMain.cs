@@ -65,8 +65,8 @@ namespace MangaSplitter
 
             Console.WriteLine("Creating booklet open\\close pages...");
 
-            createPage(makeName("00000000000000","0"), drawText: "START OF MANGA\nDATE:" + DateTime.Now.ToLongDateString());
-            createPage(makeName("ZZZZZZZZZZZZZZ","Z"), drawText: "END OF MANGA\nDATE:" + DateTime.Now.ToLongDateString());
+            createPage(standardName("00000000000000","0"), drawText: "START OF MANGA\nDATE:" + DateTime.Now.ToLongDateString());
+            createPage(standardName("ZZZZZZZZZZZZZZ","Z"), drawText: "END OF MANGA\nDATE:" + DateTime.Now.ToLongDateString());
 
           
         }
@@ -99,32 +99,32 @@ namespace MangaSplitter
 
         // Yo want every page to be in c<chapter>_p<page>.jpg format
 
-        string makeName(string chapter, string page) {
+        string standardName(string chapter, string page) {
             return "c" + chapter + "_p" + page + ".jpg";
         }
 
-        string prepareName(FileInfo file)
+        string preparePageName(FileInfo file)
         {
             //string[] str = file.Name.Split('_');
             //int pageNumLength = str[str.Length - 1].Length - "p.jpg".Length;
             //return file.FullName.Replace("_p", "_p" + strZeros(pageNumLength));
 
-            return Path.Combine(file.Directory.FullName, "p" + file.Name.Substring(1)); // ?001.jpg => p001.jpg
+            return "p" + file.Name.Substring(1); // ?001.jpg => p001.jpg
         }
 
-        string getChpater(FileInfo file)
+        string getChpaterName(string dirname, string filename)
         {
             //return file.Name.Replace(MangaSplitter.Properties.Settings.Default.ImagesPrefix, "").Substring(1).Split('_')[0]; 
 
-            string[] dirParms = file.Directory.Name.Split(' ');
+            string[] dirParms = dirname.Split(' ');
             return dirParms[dirParms.Length - 1];
         }
 
-        string newPageName(FileInfo file, string chapter)
+        string getPageFileStandardName(string filename, string chapter)
         {
             //return file.Name.Replace(MangaSplitter.Properties.Settings.Default.ImagesPrefix, "");
 
-            return  "c" + chapter + "_" + file.Name ;
+            return  "c" + chapter + "_" + filename ;
         }
         
         /************************
@@ -171,21 +171,16 @@ namespace MangaSplitter
         }
 
 
-        private bool Prepare(DirectoryInfo di) 
+        private void Prepare(DirectoryInfo di) 
         {
             int cutoff = (int)numericUpDown1.Value;
-            bool Valid = true;
-
 
             // Chane name for numerical order (no more 20 befor 3 because 2 before 3)
             // We do it by adding correct numbers of zeros
 
             Console.WriteLine("Adding zeros to files in folder:" + di.Name);
-            foreach (FileInfo fi in di.GetFiles()) {
-                if (fi.Extension != ".jpg")
-                    continue;
-
-                fi.MoveTo(prepareName(fi));
+            foreach (FileInfo fi in di.GetFiles("*.jpg")) {
+                fi.MoveTo(preparePageName(fi));
             }
 
             // Validate even pages between double pages
@@ -208,30 +203,18 @@ namespace MangaSplitter
                     {
                         if (bmp.Width > cutoff)
                         {
-                            //if (firstDouble)
-                            //{
-                            //    firstDouble = false; 
-                            //    // NOOO: Until it we dont care 
-                            //    //      --> We do, first page is chapter opening
-                            //    //      What if double come right after it?
-                            //}
-                            //else
-                            //{
                                 if (counterFromLastDouble % 2 == 1)
                                 {
-                                    Console.WriteLine("Valid problem: found " + counterFromLastDouble + " pages from last double until " + fi.FullName);
-                                    Valid = false;
+                                    Console.WriteLine("Fixing problem: found " + counterFromLastDouble + " pages from last double until " + fi.FullName);
 
                                     // Fix it by adding new page:
                                     createPage(lastfile.FullName.Replace(".jpg", "_0.jpg"), drawText: "BEFORE\nDOUBLE");
 
                                     counterFromLastDouble = 0;
                                 }
-                            //}
                         }
                         else
                         {
-                            //if (!firstDouble) counterFromLastDouble++;
                             counterFromLastDouble++;
                         }
                     }
@@ -241,12 +224,11 @@ namespace MangaSplitter
             }
 
             // Child Folders
-            foreach (DirectoryInfo under in di.GetDirectories())
+            foreach (DirectoryInfo subdi in di.GetDirectories())
             {
-                Valid = Valid & Prepare(under);
+                Prepare(subdi);
             }
 
-            return Valid;
         }
 
         private void Folder(DirectoryInfo di)
@@ -276,14 +258,14 @@ namespace MangaSplitter
                 // Set chapter:
                 if (currentChapter == "")
                 {
-                    currentChapter = strZeros(getChpater(fi),4);
+                    currentChapter = strZeros(getChpaterName(fi.Directory.Name, fi.Name),4);
                     // <prefix>c001_p001.png
 
                 }
 
                 string newFullName =  Path.Combine(
                     fi.Directory.FullName,
-                    newPageName(fi,currentChapter)
+                    getPageFileStandardName(fi.Name,currentChapter)
                 );
 
                 string newSavePath = newFullName.Replace(di.FullName, ditarget.FullName);
@@ -363,7 +345,7 @@ namespace MangaSplitter
             if (foundJPG)
             {
                 Console.WriteLine("Adding Chapter page at start!");
-                createPage(makeName(currentChapter, "0"),drawText: "Chapter: " + currentChapter);
+                createPage(standardName(currentChapter, "0"),drawText: "Chapter: " + currentChapter);
 
                 if (pageCounter % 2 == 1)
                 {
@@ -374,12 +356,12 @@ namespace MangaSplitter
                 if (addBefore)
                 {
                     Console.WriteLine("Adding blank before!");
-                    createPage(makeName(currentChapter, strZeros(spage, 3) + ".before"), drawText: "Blank before: " + currentChapter);
+                    createPage(standardName(currentChapter, strZeros(spage, 3) + ".before"), drawText: "Blank before: " + currentChapter);
                 }
                 if (addAfter)
                 {
                     Console.WriteLine("Adding blank after!");
-                    createPage(makeName(currentChapter, strZeros(spage,3) + ".after"), drawText: "Blank After: " + currentChapter);
+                    createPage(standardName(currentChapter, strZeros(spage,3) + ".after"), drawText: "Blank After: " + currentChapter);
                 } 
             }
 
