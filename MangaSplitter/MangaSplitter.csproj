@@ -122,12 +122,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Duplex.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Booklet.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\info.png" />
   </ItemGroup>
   <ItemGroup />
