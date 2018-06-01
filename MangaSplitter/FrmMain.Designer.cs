@@ -28,32 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.button2 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSourceDir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.diagFolder = new System.Windows.Forms.SaveFileDialog();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnTargerDir = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radBooklet = new System.Windows.Forms.RadioButton();
             this.lblPath = new System.Windows.Forms.TextBox();
             this.lblTarget = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbSubfolders = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radRTL = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.grpRTL = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rtbJS = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.grpRTL.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
@@ -93,15 +95,15 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Single page max width:";
             // 
-            // button1
+            // btnSourceDir
             // 
-            this.button1.Location = new System.Drawing.Point(398, 35);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 33);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Choose...";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSourceDir.Location = new System.Drawing.Point(398, 35);
+            this.btnSourceDir.Name = "btnSourceDir";
+            this.btnSourceDir.Size = new System.Drawing.Size(107, 33);
+            this.btnSourceDir.TabIndex = 7;
+            this.btnSourceDir.Text = "Choose...";
+            this.btnSourceDir.UseVisualStyleBackColor = true;
+            this.btnSourceDir.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -122,15 +124,15 @@
             this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
             this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker_RunWorkerCompleted);
             // 
-            // button3
+            // btnTargerDir
             // 
-            this.button3.Location = new System.Drawing.Point(397, 91);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(107, 33);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Choose...";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnTargerDir.Location = new System.Drawing.Point(397, 91);
+            this.btnTargerDir.Name = "btnTargerDir";
+            this.btnTargerDir.Size = new System.Drawing.Size(107, 33);
+            this.btnTargerDir.TabIndex = 13;
+            this.btnTargerDir.Text = "Choose...";
+            this.btnTargerDir.UseVisualStyleBackColor = true;
+            this.btnTargerDir.Click += new System.EventHandler(this.button3_Click);
             // 
             // label4
             // 
@@ -142,37 +144,27 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "Choose Target Directory: [-t]";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label3.Location = new System.Drawing.Point(534, 81);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 20);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Target binding:";
-            // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(769, 81);
+            this.radioButton1.Location = new System.Drawing.Point(227, 25);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(102, 24);
             this.radioButton1.TabIndex = 18;
             this.radioButton1.Text = "Duplex [-d]";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radBooklet
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Location = new System.Drawing.Point(654, 81);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(107, 24);
-            this.radioButton2.TabIndex = 19;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Booklet [-b]";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radBooklet.AutoSize = true;
+            this.radBooklet.Checked = true;
+            this.radBooklet.Location = new System.Drawing.Point(112, 25);
+            this.radBooklet.Name = "radBooklet";
+            this.radBooklet.Size = new System.Drawing.Size(107, 24);
+            this.radBooklet.TabIndex = 19;
+            this.radBooklet.TabStop = true;
+            this.radBooklet.Text = "Booklet [-b]";
+            this.radBooklet.UseVisualStyleBackColor = true;
             // 
             // lblPath
             // 
@@ -203,22 +195,22 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Image = global::MangaSplitter.Properties.Resources.info;
-            this.pictureBox1.Location = new System.Drawing.Point(321, 272);
+            this.pictureBox1.Location = new System.Drawing.Point(50, 316);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(507, 346);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
-            // checkBox1
+            // cbSubfolders
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(242, 8);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(134, 24);
-            this.checkBox1.TabIndex = 23;
-            this.checkBox1.Text = "Subfolders [-R]";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbSubfolders.AutoSize = true;
+            this.cbSubfolders.Location = new System.Drawing.Point(242, 8);
+            this.cbSubfolders.Name = "cbSubfolders";
+            this.cbSubfolders.Size = new System.Drawing.Size(134, 24);
+            this.cbSubfolders.TabIndex = 23;
+            this.cbSubfolders.Text = "Subfolders [-R]";
+            this.cbSubfolders.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -226,62 +218,34 @@
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label6.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label6.Location = new System.Drawing.Point(148, 272);
+            this.label6.Location = new System.Drawing.Point(531, 215);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(244, 80);
             this.label6.TabIndex = 24;
             this.label6.Text = "Printing settings examples:\r\n- Fit to page.\r\n- Printer options only\r\nTODO Both rt" +
     "l and edge direction";
             // 
-            // label7
+            // radRTL
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label7.Location = new System.Drawing.Point(534, 44);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(199, 20);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "(R)ight-(T)o-(L)eft Binding?";
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Checked = true;
-            this.radioButton3.Location = new System.Drawing.Point(746, 42);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(87, 24);
-            this.radioButton3.TabIndex = 27;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "RTL [-rtl]";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radRTL.AutoSize = true;
+            this.radRTL.Checked = true;
+            this.radRTL.Location = new System.Drawing.Point(117, 29);
+            this.radRTL.Name = "radRTL";
+            this.radRTL.Size = new System.Drawing.Size(87, 24);
+            this.radRTL.TabIndex = 27;
+            this.radRTL.TabStop = true;
+            this.radRTL.Text = "RTL [-rtl]";
+            this.radRTL.UseVisualStyleBackColor = true;
             // 
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(852, 42);
+            this.radioButton4.Location = new System.Drawing.Point(261, 29);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(87, 24);
             this.radioButton4.TabIndex = 28;
             this.radioButton4.Text = "LTR [-ltr]";
             this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(12, 159);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(380, 26);
-            this.textBox1.TabIndex = 31;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(397, 155);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(107, 33);
-            this.button4.TabIndex = 30;
-            this.button4.Text = "Choose...";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label8
             // 
@@ -293,32 +257,57 @@
             this.label8.TabIndex = 29;
             this.label8.Text = "Choose JS helper file: [-js]";
             // 
+            // grpRTL
+            // 
+            this.grpRTL.Controls.Add(this.radRTL);
+            this.grpRTL.Controls.Add(this.radioButton4);
+            this.grpRTL.Location = new System.Drawing.Point(535, 56);
+            this.grpRTL.Name = "grpRTL";
+            this.grpRTL.Size = new System.Drawing.Size(401, 65);
+            this.grpRTL.TabIndex = 32;
+            this.grpRTL.TabStop = false;
+            this.grpRTL.Text = "(R)ight-(T)o-(L)eft Binding?";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.radBooklet);
+            this.groupBox1.Location = new System.Drawing.Point(535, 135);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(401, 65);
+            this.groupBox1.TabIndex = 33;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Printing type?";
+            // 
+            // rtbJS
+            // 
+            this.rtbJS.Location = new System.Drawing.Point(16, 173);
+            this.rtbJS.Name = "rtbJS";
+            this.rtbJS.Size = new System.Drawing.Size(489, 122);
+            this.rtbJS.TabIndex = 34;
+            this.rtbJS.Text = resources.GetString("rtbJS.Text");
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 730);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.rtbJS);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpRTL);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cbSubfolders);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblTarget);
             this.Controls.Add(this.lblPath);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnTargerDir);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSourceDir);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -330,6 +319,10 @@
             this.Load += new System.EventHandler(this.FrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.grpRTL.ResumeLayout(false);
+            this.grpRTL.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,26 +333,25 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSourceDir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SaveFileDialog diagFolder;
         private System.ComponentModel.BackgroundWorker backgroundWorker;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnTargerDir;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radBooklet;
         private System.Windows.Forms.TextBox lblPath;
         private System.Windows.Forms.TextBox lblTarget;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cbSubfolders;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radRTL;
         private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox grpRTL;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RichTextBox rtbJS;
     }
 }

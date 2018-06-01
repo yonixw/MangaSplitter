@@ -17,6 +17,6 @@ namespace MangaSplitter
         public bool rtl = true;
         public bool Booklet = true;
 
-        public string funcFilePath = "";
+        public string jsCodeHelper = "";
     }
 }

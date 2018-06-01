@@ -23,7 +23,7 @@ namespace MangaSplitter
             using (ScriptEngine engine = new ScriptEngine(ScriptEngine.JavaScriptLanguage))
             {
                 helpScript =
-                    engine.Parse(File.ReadAllText(conf.funcFilePath));
+                    engine.Parse(conf.jsCodeHelper);
             }
         }
 

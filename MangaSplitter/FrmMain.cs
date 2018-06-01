@@ -50,9 +50,18 @@ namespace MangaSplitter
        
         private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            
+            Console.WriteLine("[Background Thread] START");
+            MainAlgo algo = new MainAlgo(new Config() {
+                Booklet = radBooklet.Checked,
+                rtl = radRTL.Checked,
+                doublePageMinWidthPx = (int)numericUpDown1.Value,
+                sourchDirPath = lblPath.Text,
+                targetDirPath = lblTarget.Text,
+                sourceSubdirsInclude = cbSubfolders.Checked,
+                jsCodeHelper = rtbJS.Text
+            });
 
-          
+            algo.StartSplitting();
         }
         
         private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
