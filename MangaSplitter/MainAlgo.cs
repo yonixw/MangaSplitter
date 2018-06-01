@@ -209,6 +209,7 @@ namespace MangaSplitter
 
                 try
                 {
+                    bool deleteDoubleFlag = false;
                     using (Bitmap bmp = (Bitmap)Bitmap.FromFile(targetFi.FullName))
                     {
                         if (bmp.Width > cutoff)
@@ -222,6 +223,8 @@ namespace MangaSplitter
                                     addBefore = true;
                                 }
                             }
+
+                            deleteDoubleFlag = true;
 
                             Console.WriteLine("Split!");
 
@@ -259,7 +262,6 @@ namespace MangaSplitter
                             }
 
                             Console.WriteLine("Delete double original...");
-                            targetFi.Delete(); 
                         }
                         else
                         {
@@ -267,6 +269,7 @@ namespace MangaSplitter
                         }
                     }
 
+                    if (deleteDoubleFlag) targetFi.Delete(); 
                 }
                 catch (Exception ex)
                 {
