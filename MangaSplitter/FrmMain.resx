@@ -123,16 +123,4 @@
   <metadata name="backgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>127, 17</value>
   </metadata>
-  <data name="rtbJS.Text" xml:space="preserve">
-    <value>function getPageNum(filename) {
-    // ?000.* ===&gt; 000
-    return filename.substring(1,filename.length-4)
-}
-
-function getChapterNum(dirname, filename) {
-    // Manga chap 1\ ===&gt; 1
-    vals = dirname.split(' ')
-    return vals[vals.length-1];
-}</value>
-  </data>
 </root>

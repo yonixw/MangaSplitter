@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.button2 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -287,7 +286,8 @@
             this.rtbJS.Name = "rtbJS";
             this.rtbJS.Size = new System.Drawing.Size(489, 249);
             this.rtbJS.TabIndex = 34;
-            this.rtbJS.Text = resources.GetString("rtbJS.Text");
+            this.rtbJS.Text = "function getChapterNum(dirname, filename) {\n    // Manga chap 1\\ ===> 1\n    vals " +
+    "= dirname.split(\' \')\n    return vals[vals.length-1];\n}";
             // 
             // FrmMain
             // 

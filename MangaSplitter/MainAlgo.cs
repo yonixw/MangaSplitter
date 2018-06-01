@@ -52,20 +52,12 @@ namespace MangaSplitter
                 result += "0";
             }
             return
-                string.Format("{0:" + result + "}", int.Parse(numText));
+                string.Format("{0:" + result + "}", (int)(float.Parse(numText) * 100/* ex: 81.5 */));
         }
 
         // ----------------------------------
         //          JS HELP Functions
         // -----------------------------------
-
-        string preparePageName(string filename)
-        {
-            //User job : *001*.jpg => 001  
-            //Our job  : 001 => 1 => p000001.jpg
-            string pagenum = helpScript.CallMethod("getPageNum", filename).ToString();
-            return "p" + strZeros(pagenum, 6) + ".jpg";
-        }
 
         string getRawChapterName(string dirname, string filename)
         {
@@ -120,11 +112,15 @@ namespace MangaSplitter
             // We do it by adding correct numbers of zeros
 
             Console.WriteLine("Adding zeros to files in folder:" + di.Name);
+            int pageCounter = 1;
             foreach (FileInfo fi in di.GetFiles("*.jpg"))
             {
-                string newFile = Path.Combine(fi.Directory.FullName, preparePageName(fi.Name));
+                string newFile = Path.Combine(fi.Directory.FullName,
+                    "p" + strZeros(pageCounter.ToString(),6) + ".jpg");
                 if (newFile != fi.FullName)
                     fi.MoveTo(newFile);
+
+                pageCounter++;
             }
 
             // Validate even pages between double pages
@@ -236,12 +232,14 @@ namespace MangaSplitter
                             Console.Write("Left Side...");
                             using (Bitmap left = new Bitmap(bmp.Width / 2, bmp.Height))
                             {
-                                Graphics gLeft = Graphics.FromImage(left);
-                                Rectangle leftSize = new Rectangle(0, 0, left.Width, left.Height);
-                                // Where left is in the original pictue:
-                                Rectangle leftPosition = new Rectangle(0, 0, left.Width, left.Height);
-                                gLeft.DrawImage(bmp, leftSize, leftPosition, GraphicsUnit.Pixel);
-                                left.Save(targetFi.FullName.Replace(".jpg", leftPrefix+ ".jpg"), ImageFormat.Jpeg);
+                                using (Graphics gLeft = Graphics.FromImage(left))
+                                {
+                                    Rectangle leftSize = new Rectangle(0, 0, left.Width, left.Height);
+                                    // Where left is in the original pictue:
+                                    Rectangle leftPosition = new Rectangle(0, 0, left.Width, left.Height);
+                                    gLeft.DrawImage(bmp, leftSize, leftPosition, GraphicsUnit.Pixel);
+                                    left.Save(targetFi.FullName.Replace(".jpg", leftPrefix + ".jpg"), ImageFormat.Jpeg);
+                                }
                             }
 
                             pageCounter++;
@@ -250,12 +248,14 @@ namespace MangaSplitter
                             Console.Write("Right Side...");
                             using (Bitmap right = new Bitmap(bmp.Width / 2, bmp.Height))
                             {
-                                Graphics gRight = Graphics.FromImage(right);
-                                Rectangle rightSize = new Rectangle(0, 0, right.Width, right.Height);
-                                // Where left is in the original pictue:
-                                Rectangle rightPosition = new Rectangle(bmp.Width - right.Width, 0, right.Width, right.Height);
-                                gRight.DrawImage(bmp, rightSize, rightPosition, GraphicsUnit.Pixel);
-                                right.Save(targetFi.FullName.Replace(".jpg", rightPrefix + ".jpg"), ImageFormat.Jpeg);
+                                using (Graphics gRight = Graphics.FromImage(right))
+                                {
+                                    Rectangle rightSize = new Rectangle(0, 0, right.Width, right.Height);
+                                    // Where left is in the original pictue:
+                                    Rectangle rightPosition = new Rectangle(bmp.Width - right.Width, 0, right.Width, right.Height);
+                                    gRight.DrawImage(bmp, rightSize, rightPosition, GraphicsUnit.Pixel);
+                                    right.Save(targetFi.FullName.Replace(".jpg", rightPrefix + ".jpg"), ImageFormat.Jpeg);
+                                }
                             }
 
                             Console.WriteLine("Delete double original...");
