@@ -60,7 +60,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(852, 461);
+            this.button2.Location = new System.Drawing.Point(892, 681);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(140, 37);
             this.button2.TabIndex = 11;
@@ -195,7 +195,7 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Image = global::MangaSplitter.Properties.Resources.info;
-            this.pictureBox1.Location = new System.Drawing.Point(50, 316);
+            this.pictureBox1.Location = new System.Drawing.Point(525, 206);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(507, 346);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -205,6 +205,8 @@
             // cbSubfolders
             // 
             this.cbSubfolders.AutoSize = true;
+            this.cbSubfolders.Checked = true;
+            this.cbSubfolders.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbSubfolders.Location = new System.Drawing.Point(242, 8);
             this.cbSubfolders.Name = "cbSubfolders";
             this.cbSubfolders.Size = new System.Drawing.Size(134, 24);
@@ -218,7 +220,7 @@
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label6.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label6.Location = new System.Drawing.Point(531, 215);
+            this.label6.Location = new System.Drawing.Point(620, 555);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(244, 80);
             this.label6.TabIndex = 24;
@@ -283,7 +285,7 @@
             // 
             this.rtbJS.Location = new System.Drawing.Point(16, 173);
             this.rtbJS.Name = "rtbJS";
-            this.rtbJS.Size = new System.Drawing.Size(489, 122);
+            this.rtbJS.Size = new System.Drawing.Size(489, 249);
             this.rtbJS.TabIndex = 34;
             this.rtbJS.Text = resources.GetString("rtbJS.Text");
             // 

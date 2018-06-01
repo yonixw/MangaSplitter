@@ -317,7 +317,7 @@ namespace MangaSplitter
             Console.WriteLine("Cutoff width: " + conf.doublePageMinWidthPx);
 
             PrepareFolder(diSourceFolder);
-            CopyFolder(diTargetFolder);
+            CopyFolder(diSourceFolder);
 
             if (conf.Booklet)
             {
