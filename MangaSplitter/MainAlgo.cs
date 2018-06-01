@@ -122,9 +122,9 @@ namespace MangaSplitter
             Console.WriteLine("Adding zeros to files in folder:" + di.Name);
             foreach (FileInfo fi in di.GetFiles("*.jpg"))
             {
-                fi.MoveTo(
-                    Path.Combine(fi.Directory.FullName,preparePageName(fi.Name))
-                    );
+                string newFile = Path.Combine(fi.Directory.FullName, preparePageName(fi.Name));
+                if (newFile != fi.FullName)
+                    fi.MoveTo(newFile);
             }
 
             // Validate even pages between double pages
@@ -326,7 +326,7 @@ namespace MangaSplitter
             else
             {
                 Console.WriteLine("Creating duplex open\\close pages...");
-                createPage(standardName(strZeros("0", 6), strZeros("1", 6)), drawText: "BLANK\nFOR\nDUPLEX" + DateTime.Now.ToLongDateString());
+                createPage(standardName(strZeros("0", 6), strZeros("1", 6)), drawText: "BLANK\nFOR\nDUPLEX\nDATE:" + DateTime.Now.ToLongDateString());
             }
 
             createPage(standardName(strZeros("0",6), strZeros("0", 6)), 

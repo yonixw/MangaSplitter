@@ -126,7 +126,7 @@
   <data name="rtbJS.Text" xml:space="preserve">
     <value>function getPageNum(filename) {
     // ?000.* ===&gt; 000
-    return filename.substring(1,4)
+    return filename.substring(1,filename.length-4)
 }
 
 function getChapterNum(dirname, filename) {

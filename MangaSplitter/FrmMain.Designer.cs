@@ -147,22 +147,22 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(227, 25);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(102, 24);
             this.radioButton1.TabIndex = 18;
+            this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Duplex [-d]";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // radBooklet
             // 
             this.radBooklet.AutoSize = true;
-            this.radBooklet.Checked = true;
             this.radBooklet.Location = new System.Drawing.Point(112, 25);
             this.radBooklet.Name = "radBooklet";
             this.radBooklet.Size = new System.Drawing.Size(107, 24);
             this.radBooklet.TabIndex = 19;
-            this.radBooklet.TabStop = true;
             this.radBooklet.Text = "Booklet [-b]";
             this.radBooklet.UseVisualStyleBackColor = true;
             // 

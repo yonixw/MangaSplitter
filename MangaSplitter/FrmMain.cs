@@ -51,17 +51,16 @@ namespace MangaSplitter
         private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             Console.WriteLine("[Background Thread] START");
-            MainAlgo algo = new MainAlgo(new Config() {
-                Booklet = radBooklet.Checked,
-                rtl = radRTL.Checked,
-                doublePageMinWidthPx = (int)numericUpDown1.Value,
-                sourchDirPath = lblPath.Text,
-                targetDirPath = lblTarget.Text,
-                sourceSubdirsInclude = cbSubfolders.Checked,
-                jsCodeHelper = rtbJS.Text
-            });
+            MainAlgo algo = new MainAlgo(e.Argument as Config);
 
-            algo.StartSplitting();
+            try
+            {
+                algo.StartSplitting();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n\n" + ex.StackTrace);
+            }
         }
         
         private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -71,7 +70,16 @@ namespace MangaSplitter
 
         private void button2_Click(object sender, EventArgs e)
         {
-            backgroundWorker.RunWorkerAsync();
+            backgroundWorker.RunWorkerAsync(new Config()
+            {
+                Booklet = radBooklet.Checked,
+                rtl = radRTL.Checked,
+                doublePageMinWidthPx = (int)numericUpDown1.Value,
+                sourchDirPath = lblPath.Text,
+                targetDirPath = lblTarget.Text,
+                sourceSubdirsInclude = cbSubfolders.Checked,
+                jsCodeHelper = rtbJS.Text
+            });
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
