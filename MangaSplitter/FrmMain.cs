@@ -53,10 +53,9 @@ namespace MangaSplitter
         private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             Console.WriteLine("[Background Thread] START");
-            MainAlgo algo = new MainAlgo(e.Argument as MainAlgoConfig);
-
             try
             {
+                MainAlgo algo = new MainAlgo(e.Argument as MainAlgoConfig);
                 algo.StartSplitting();
             }
             catch (Exception ex)
@@ -96,6 +95,11 @@ namespace MangaSplitter
         private void button4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(linkLabel1.Text);
         }
 
 

@@ -42,7 +42,6 @@
             this.lblPath = new System.Windows.Forms.TextBox();
             this.lblTarget = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbSubfolders = new System.Windows.Forms.CheckBox();
             this.radRTL = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
@@ -54,19 +53,22 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpRTL.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(345, 482);
+            this.button2.Location = new System.Drawing.Point(188, 355);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(187, 37);
             this.button2.TabIndex = 11;
@@ -103,7 +105,7 @@
             // 
             // btnSourceDir
             // 
-            this.btnSourceDir.Location = new System.Drawing.Point(392, 35);
+            this.btnSourceDir.Location = new System.Drawing.Point(439, 35);
             this.btnSourceDir.Name = "btnSourceDir";
             this.btnSourceDir.Size = new System.Drawing.Size(107, 33);
             this.btnSourceDir.TabIndex = 7;
@@ -132,7 +134,7 @@
             // 
             // btnTargerDir
             // 
-            this.btnTargerDir.Location = new System.Drawing.Point(391, 91);
+            this.btnTargerDir.Location = new System.Drawing.Point(439, 92);
             this.btnTargerDir.Name = "btnTargerDir";
             this.btnTargerDir.Size = new System.Drawing.Size(107, 33);
             this.btnTargerDir.TabIndex = 13;
@@ -154,7 +156,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(355, 25);
+            this.radioButton1.Location = new System.Drawing.Point(318, 25);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(76, 24);
             this.radioButton1.TabIndex = 18;
@@ -165,7 +167,7 @@
             // radBooklet
             // 
             this.radBooklet.AutoSize = true;
-            this.radBooklet.Location = new System.Drawing.Point(227, 25);
+            this.radBooklet.Location = new System.Drawing.Point(53, 27);
             this.radBooklet.Name = "radBooklet";
             this.radBooklet.Size = new System.Drawing.Size(85, 24);
             this.radBooklet.TabIndex = 19;
@@ -177,7 +179,7 @@
             this.lblPath.Location = new System.Drawing.Point(6, 38);
             this.lblPath.Name = "lblPath";
             this.lblPath.ReadOnly = true;
-            this.lblPath.Size = new System.Drawing.Size(380, 26);
+            this.lblPath.Size = new System.Drawing.Size(427, 26);
             this.lblPath.TabIndex = 20;
             // 
             // lblTarget
@@ -185,7 +187,7 @@
             this.lblTarget.Location = new System.Drawing.Point(6, 95);
             this.lblTarget.Name = "lblTarget";
             this.lblTarget.ReadOnly = true;
-            this.lblTarget.Size = new System.Drawing.Size(380, 26);
+            this.lblTarget.Size = new System.Drawing.Size(427, 26);
             this.lblTarget.TabIndex = 21;
             // 
             // label5
@@ -196,17 +198,6 @@
             this.label5.Size = new System.Drawing.Size(39, 20);
             this.label5.TabIndex = 22;
             this.label5.Text = "(px) ";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = global::MangaSplitter.Properties.Resources.info;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 178);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(507, 346);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
             // 
             // cbSubfolders
             // 
@@ -224,7 +215,7 @@
             // 
             this.radRTL.AutoSize = true;
             this.radRTL.Checked = true;
-            this.radRTL.Location = new System.Drawing.Point(227, 29);
+            this.radRTL.Location = new System.Drawing.Point(288, 29);
             this.radRTL.Name = "radRTL";
             this.radRTL.Size = new System.Drawing.Size(61, 24);
             this.radRTL.TabIndex = 27;
@@ -248,9 +239,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label8.Location = new System.Drawing.Point(8, 185);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(167, 20);
+            this.label8.Size = new System.Drawing.Size(171, 20);
             this.label8.TabIndex = 29;
-            this.label8.Text = "Choose JS helper file: ";
+            this.label8.Text = "Javascript code helper:";
             // 
             // grpRTL
             // 
@@ -258,7 +249,7 @@
             this.grpRTL.Controls.Add(this.radioButton4);
             this.grpRTL.Location = new System.Drawing.Point(18, 15);
             this.grpRTL.Name = "grpRTL";
-            this.grpRTL.Size = new System.Drawing.Size(507, 65);
+            this.grpRTL.Size = new System.Drawing.Size(527, 65);
             this.grpRTL.TabIndex = 32;
             this.grpRTL.TabStop = false;
             this.grpRTL.Text = "(R)ight-(T)o-(L)eft Binding?";
@@ -269,7 +260,7 @@
             this.groupBox1.Controls.Add(this.radBooklet);
             this.groupBox1.Location = new System.Drawing.Point(18, 94);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(507, 65);
+            this.groupBox1.Size = new System.Drawing.Size(527, 65);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Printing type?";
@@ -278,7 +269,7 @@
             // 
             this.rtbJS.Location = new System.Drawing.Point(11, 223);
             this.rtbJS.Name = "rtbJS";
-            this.rtbJS.Size = new System.Drawing.Size(489, 295);
+            this.rtbJS.Size = new System.Drawing.Size(535, 446);
             this.rtbJS.TabIndex = 34;
             this.rtbJS.Text = "function getChapterNum(dirname, filename) {\n    // Manga chap 1\\ ===> 1\n    vals " +
     "= dirname.split(\' \')\n    return vals[vals.length-1];\n}";
@@ -292,7 +283,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(548, 569);
+            this.tabControl1.Size = new System.Drawing.Size(562, 726);
             this.tabControl1.TabIndex = 35;
             // 
             // tabPage1
@@ -312,7 +303,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(540, 536);
+            this.tabPage1.Size = new System.Drawing.Size(554, 693);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "1) Folders\\Files";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -325,26 +316,59 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(540, 536);
+            this.tabPage2.Size = new System.Drawing.Size(554, 693);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "2) Print style";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.linkLabel1);
+            this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.button2);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(540, 536);
+            this.tabPage3.Size = new System.Drawing.Size(554, 693);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "3) Start!";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Image = global::MangaSplitter.Properties.Resources.info;
+            this.pictureBox1.Location = new System.Drawing.Point(18, 178);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(527, 503);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(136, 241);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(296, 20);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Made by yonixw, Version 1, Url of source:";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(140, 267);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(288, 20);
+            this.linkLabel1.TabIndex = 13;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "https://github.com/yonixw/MangaSplitter";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 569);
+            this.ClientSize = new System.Drawing.Size(562, 726);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -355,7 +379,6 @@
             this.Text = "MangaSplitter GUI";
             this.Load += new System.EventHandler(this.FrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grpRTL.ResumeLayout(false);
             this.grpRTL.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -364,8 +387,9 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -398,5 +422,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label3;
     }
 }
