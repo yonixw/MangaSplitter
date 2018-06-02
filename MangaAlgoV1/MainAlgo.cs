@@ -1,4 +1,4 @@
-﻿using MangaSplitter.Tools;
+﻿using MangaAlgoV1.Tools;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -6,15 +6,15 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Text;
 
-namespace MangaSplitter
+namespace MangaAlgoV1
 {
-    class MainAlgo
+    public class MainAlgo
     {
-        Config conf = null;
+        MainAlgoConfig conf = null;
         DirectoryInfo diSourceFolder,diTargetFolder;
         Tools.ParsedScript helpScript;
 
-        public MainAlgo(Config algoConfig)
+        public MainAlgo(MainAlgoConfig algoConfig)
         {
             conf = algoConfig;
             diSourceFolder = new DirectoryInfo(conf.sourchDirPath);

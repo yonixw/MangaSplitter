@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading;
 
-namespace MangaSplitter.Tools
+namespace MangaAlgoV1.Tools
 {
     //https://stackoverflow.com/a/4748886/1997873
     class JavascriptActiveXEngine

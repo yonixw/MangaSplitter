@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MangaSplitter
+namespace MangaAlgoV1
 {
-    class Config
+    public class MainAlgoConfig
     {
         public string sourchDirPath = "";
         public bool sourceSubdirsInclude = false;

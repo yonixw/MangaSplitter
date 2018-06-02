@@ -44,32 +44,39 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbSubfolders = new System.Windows.Forms.CheckBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.radRTL = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
             this.grpRTL = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rtbJS = new System.Windows.Forms.RichTextBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpRTL.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(892, 681);
+            this.button2.Location = new System.Drawing.Point(345, 482);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 37);
+            this.button2.Size = new System.Drawing.Size(187, 37);
             this.button2.TabIndex = 11;
-            this.button2.Text = "3) Cut manga!";
+            this.button2.Text = "Start splitting manga!";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(708, 8);
+            this.numericUpDown1.Location = new System.Drawing.Point(184, 138);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             15000,
             0,
@@ -88,7 +95,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label2.Location = new System.Drawing.Point(531, 11);
+            this.label2.Location = new System.Drawing.Point(7, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(171, 20);
             this.label2.TabIndex = 9;
@@ -96,7 +103,7 @@
             // 
             // btnSourceDir
             // 
-            this.btnSourceDir.Location = new System.Drawing.Point(398, 35);
+            this.btnSourceDir.Location = new System.Drawing.Point(392, 35);
             this.btnSourceDir.Name = "btnSourceDir";
             this.btnSourceDir.Size = new System.Drawing.Size(107, 33);
             this.btnSourceDir.TabIndex = 7;
@@ -108,11 +115,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(6, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(215, 20);
+            this.label1.Size = new System.Drawing.Size(190, 20);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Choose Source Directory: [-s]";
+            this.label1.Text = "Choose Source Directory:";
             // 
             // diagFolder
             // 
@@ -125,7 +132,7 @@
             // 
             // btnTargerDir
             // 
-            this.btnTargerDir.Location = new System.Drawing.Point(397, 91);
+            this.btnTargerDir.Location = new System.Drawing.Point(391, 91);
             this.btnTargerDir.Name = "btnTargerDir";
             this.btnTargerDir.Size = new System.Drawing.Size(107, 33);
             this.btnTargerDir.TabIndex = 13;
@@ -137,37 +144,37 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label4.Location = new System.Drawing.Point(13, 71);
+            this.label4.Location = new System.Drawing.Point(7, 71);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(207, 20);
+            this.label4.Size = new System.Drawing.Size(319, 20);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Choose Target Directory: [-t]";
+            this.label4.Text = "Choose Target Directory (not insdie source):";
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(227, 25);
+            this.radioButton1.Location = new System.Drawing.Point(355, 25);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(102, 24);
+            this.radioButton1.Size = new System.Drawing.Size(76, 24);
             this.radioButton1.TabIndex = 18;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Duplex [-d]";
+            this.radioButton1.Text = "Duplex";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // radBooklet
             // 
             this.radBooklet.AutoSize = true;
-            this.radBooklet.Location = new System.Drawing.Point(112, 25);
+            this.radBooklet.Location = new System.Drawing.Point(227, 25);
             this.radBooklet.Name = "radBooklet";
-            this.radBooklet.Size = new System.Drawing.Size(107, 24);
+            this.radBooklet.Size = new System.Drawing.Size(85, 24);
             this.radBooklet.TabIndex = 19;
-            this.radBooklet.Text = "Booklet [-b]";
+            this.radBooklet.Text = "Booklet ";
             this.radBooklet.UseVisualStyleBackColor = true;
             // 
             // lblPath
             // 
-            this.lblPath.Location = new System.Drawing.Point(12, 38);
+            this.lblPath.Location = new System.Drawing.Point(6, 38);
             this.lblPath.Name = "lblPath";
             this.lblPath.ReadOnly = true;
             this.lblPath.Size = new System.Drawing.Size(380, 26);
@@ -175,7 +182,7 @@
             // 
             // lblTarget
             // 
-            this.lblTarget.Location = new System.Drawing.Point(12, 95);
+            this.lblTarget.Location = new System.Drawing.Point(6, 95);
             this.lblTarget.Name = "lblTarget";
             this.lblTarget.ReadOnly = true;
             this.lblTarget.Size = new System.Drawing.Size(380, 26);
@@ -184,17 +191,17 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(834, 10);
+            this.label5.Location = new System.Drawing.Point(310, 140);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 20);
+            this.label5.Size = new System.Drawing.Size(39, 20);
             this.label5.TabIndex = 22;
-            this.label5.Text = "(px) [-p]";
+            this.label5.Text = "(px) ";
             // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Image = global::MangaSplitter.Properties.Resources.info;
-            this.pictureBox1.Location = new System.Drawing.Point(525, 206);
+            this.pictureBox1.Location = new System.Drawing.Point(18, 178);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(507, 346);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -206,65 +213,52 @@
             this.cbSubfolders.AutoSize = true;
             this.cbSubfolders.Checked = true;
             this.cbSubfolders.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbSubfolders.Location = new System.Drawing.Point(242, 8);
+            this.cbSubfolders.Location = new System.Drawing.Point(236, 8);
             this.cbSubfolders.Name = "cbSubfolders";
-            this.cbSubfolders.Size = new System.Drawing.Size(134, 24);
+            this.cbSubfolders.Size = new System.Drawing.Size(109, 24);
             this.cbSubfolders.TabIndex = 23;
-            this.cbSubfolders.Text = "Subfolders [-R]";
+            this.cbSubfolders.Text = "Subfolders ";
             this.cbSubfolders.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label6.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label6.Location = new System.Drawing.Point(620, 555);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(244, 80);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Printing settings examples:\r\n- Fit to page.\r\n- Printer options only\r\nTODO Both rt" +
-    "l and edge direction";
             // 
             // radRTL
             // 
             this.radRTL.AutoSize = true;
             this.radRTL.Checked = true;
-            this.radRTL.Location = new System.Drawing.Point(117, 29);
+            this.radRTL.Location = new System.Drawing.Point(227, 29);
             this.radRTL.Name = "radRTL";
-            this.radRTL.Size = new System.Drawing.Size(87, 24);
+            this.radRTL.Size = new System.Drawing.Size(61, 24);
             this.radRTL.TabIndex = 27;
             this.radRTL.TabStop = true;
-            this.radRTL.Text = "RTL [-rtl]";
+            this.radRTL.Text = "RTL ";
             this.radRTL.UseVisualStyleBackColor = true;
             // 
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(261, 29);
+            this.radioButton4.Location = new System.Drawing.Point(355, 29);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(87, 24);
+            this.radioButton4.Size = new System.Drawing.Size(57, 24);
             this.radioButton4.TabIndex = 28;
-            this.radioButton4.Text = "LTR [-ltr]";
+            this.radioButton4.Text = "LTR";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label8.Location = new System.Drawing.Point(13, 135);
+            this.label8.Location = new System.Drawing.Point(8, 185);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(191, 20);
+            this.label8.Size = new System.Drawing.Size(167, 20);
             this.label8.TabIndex = 29;
-            this.label8.Text = "Choose JS helper file: [-js]";
+            this.label8.Text = "Choose JS helper file: ";
             // 
             // grpRTL
             // 
             this.grpRTL.Controls.Add(this.radRTL);
             this.grpRTL.Controls.Add(this.radioButton4);
-            this.grpRTL.Location = new System.Drawing.Point(535, 56);
+            this.grpRTL.Location = new System.Drawing.Point(18, 15);
             this.grpRTL.Name = "grpRTL";
-            this.grpRTL.Size = new System.Drawing.Size(401, 65);
+            this.grpRTL.Size = new System.Drawing.Size(507, 65);
             this.grpRTL.TabIndex = 32;
             this.grpRTL.TabStop = false;
             this.grpRTL.Text = "(R)ight-(T)o-(L)eft Binding?";
@@ -273,44 +267,85 @@
             // 
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.radBooklet);
-            this.groupBox1.Location = new System.Drawing.Point(535, 135);
+            this.groupBox1.Location = new System.Drawing.Point(18, 94);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(401, 65);
+            this.groupBox1.Size = new System.Drawing.Size(507, 65);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Printing type?";
             // 
             // rtbJS
             // 
-            this.rtbJS.Location = new System.Drawing.Point(16, 173);
+            this.rtbJS.Location = new System.Drawing.Point(11, 223);
             this.rtbJS.Name = "rtbJS";
-            this.rtbJS.Size = new System.Drawing.Size(489, 249);
+            this.rtbJS.Size = new System.Drawing.Size(489, 295);
             this.rtbJS.TabIndex = 34;
             this.rtbJS.Text = "function getChapterNum(dirname, filename) {\n    // Manga chap 1\\ ===> 1\n    vals " +
     "= dirname.split(\' \')\n    return vals[vals.length-1];\n}";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(548, 569);
+            this.tabControl1.TabIndex = 35;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.rtbJS);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.numericUpDown1);
+            this.tabPage1.Controls.Add(this.btnSourceDir);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.btnTargerDir);
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.lblPath);
+            this.tabPage1.Controls.Add(this.lblTarget);
+            this.tabPage1.Controls.Add(this.cbSubfolders);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(540, 536);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "1) Folders\\Files";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.grpRTL);
+            this.tabPage2.Controls.Add(this.pictureBox1);
+            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(540, 536);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "2) Print style";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(540, 536);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "3) Start!";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1057, 730);
-            this.Controls.Add(this.rtbJS);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.grpRTL);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.cbSubfolders);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.lblTarget);
-            this.Controls.Add(this.lblPath);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnTargerDir);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnSourceDir);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(548, 569);
+            this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -325,8 +360,13 @@
             this.grpRTL.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -348,12 +388,15 @@
         private System.Windows.Forms.TextBox lblTarget;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox cbSubfolders;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RadioButton radRTL;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox grpRTL;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RichTextBox rtbJS;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
     }
 }

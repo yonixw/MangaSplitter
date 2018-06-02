@@ -10,7 +10,9 @@ using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Imaging;
 using System.Diagnostics;
-using MangaSplitter.Tools;
+
+using MangaAlgoV1;
+using MangaAlgoV1.Tools;
 
 namespace MangaSplitter
 {
@@ -51,7 +53,7 @@ namespace MangaSplitter
         private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             Console.WriteLine("[Background Thread] START");
-            MainAlgo algo = new MainAlgo(e.Argument as Config);
+            MainAlgo algo = new MainAlgo(e.Argument as MainAlgoConfig);
 
             try
             {
@@ -70,7 +72,7 @@ namespace MangaSplitter
 
         private void button2_Click(object sender, EventArgs e)
         {
-            backgroundWorker.RunWorkerAsync(new Config()
+            backgroundWorker.RunWorkerAsync(new MainAlgoConfig()
             {
                 Booklet = radBooklet.Checked,
                 rtl = radRTL.Checked,
