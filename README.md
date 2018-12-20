@@ -1,4 +1,4 @@
-# This project is replaced with MangaPrinter here:[Link](https://github.com/yonixw/MangaPrinter/blob/yonixw-readme/readme.md)
+# This project is replaced with MangaPrinter here:[Link](https://github.com/yonixw/MangaPrinter)
 
 # =============================
 # =======  ARCHIVE:============
