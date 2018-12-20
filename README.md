@@ -1,3 +1,8 @@
+# This project is replaced with MangaPrinter here:[Link](https://github.com/yonixw/MangaPrinter/blob/yonixw-readme/readme.md)
+
+# =============================
+# =======  ARCHIVE:============
+# =============================
 # MangaSplitter
 Reorder and split manga images to the target binding.
 
